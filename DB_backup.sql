@@ -2,15 +2,14 @@
 -- PostgreSQL database dump
 --
 
-\restrict s4Wxeb6N9zWIDfVAjYgIUb0Sogy0qmzyW6bA7C4dFmB9MdhRdBjS2CCAcgQcwdF
+\restrict zrkzEjxjt9CDzYfL6Y0JmB5s1mGCaj6SDCz25ssl4dWeEFzPSZ5trnh65kMlejH
 
--- Dumped from database version 18.3 (Postgres.app)
--- Dumped by pg_dump version 18.3 (Postgres.app)
+-- Dumped from database version 13.23
+-- Dumped by pg_dump version 13.23
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -50,7 +49,7 @@ CREATE SEQUENCE public.access_levels_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.access_levels_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.access_levels_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: access_levels_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -87,7 +86,7 @@ CREATE SEQUENCE public.card_permissions_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.card_permissions_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.card_permissions_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: card_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -125,7 +124,7 @@ CREATE SEQUENCE public.cards_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.cards_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.cards_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: cards_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -163,7 +162,7 @@ CREATE SEQUENCE public.controllers_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.controllers_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.controllers_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: controllers_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -198,7 +197,7 @@ CREATE SEQUENCE public.custom_templates_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.custom_templates_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.custom_templates_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: custom_templates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -232,7 +231,7 @@ CREATE SEQUENCE public.departments_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.departments_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.departments_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: departments_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -280,7 +279,7 @@ CREATE SEQUENCE public.passage_point_groups_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.passage_point_groups_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.passage_point_groups_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: passage_point_groups_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -316,7 +315,7 @@ CREATE SEQUENCE public.passage_points_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.passage_points_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.passage_points_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: passage_points_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -351,7 +350,7 @@ CREATE SEQUENCE public.permissions_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.permissions_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.permissions_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: permissions_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -385,7 +384,7 @@ CREATE SEQUENCE public.posts_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.posts_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.posts_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: posts_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -424,7 +423,7 @@ CREATE SEQUENCE public.scaners_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.scaners_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.scaners_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: scaners_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -459,7 +458,7 @@ CREATE SEQUENCE public.stock_templates_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.stock_templates_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.stock_templates_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: stock_templates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -495,7 +494,7 @@ CREATE SEQUENCE public.system_users_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.system_users_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.system_users_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: system_users_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -536,7 +535,7 @@ CREATE SEQUENCE public.users_unique_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.users_unique_id_seq OWNER TO ilavoronin;
+ALTER TABLE public.users_unique_id_seq OWNER TO ilavoronin;
 
 --
 -- Name: users_unique_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ilavoronin
@@ -661,9 +660,15 @@ COPY public.access_levels (unique_id, title, code, description) FROM stdin;
 --
 
 COPY public.card_permissions (card_id, permission_id, group_of_passage_point_id, default_floor, id) FROM stdin;
-2	7	1	5	11
-2	8	2	1	12
-1	7	1	1	13
+18	14	9	5	21
+21	14	5	8	20
+19	14	7	5	22
+22	14	6	3	23
+20	14	8	4	24
+20	14	10	2	25
+23	14	5	8	26
+25	14	12	1	28
+24	14	14	\N	29
 \.
 
 
@@ -672,8 +677,14 @@ COPY public.card_permissions (card_id, permission_id, group_of_passage_point_id,
 --
 
 COPY public.cards (unique_id, code, access_level_id, expiry_date, user_id, is_blocked) FROM stdin;
-1	6312110	1	2026-03-31 00:00:00	4	f
-2	6023176	4	2026-06-02 00:00:00	1	f
+19	6312110	1	2026-12-31 00:00:00	9	f
+18	5675209	1	2026-12-31 00:00:00	12	f
+22	5616428	1	2026-12-31 00:00:00	11	f
+20	5843671	1	2026-12-31 00:00:00	10	f
+23	147273950	1	2026-12-31 00:00:00	8	f
+21	6294985	1	2026-12-31 00:00:00	8	f
+25	56776545	1	2026-12-31 00:00:00	13	f
+24	321456987	1	2026-12-31 00:00:00	\N	f
 \.
 
 
@@ -682,9 +693,7 @@ COPY public.cards (unique_id, code, access_level_id, expiry_date, user_id, is_bl
 --
 
 COPY public.controllers (unique_id, ip_address, type, description, channels, device_id) FROM stdin;
-1	192.168.65.9	f	Левая шахта главного здания	5	SomeNewID
-2	192.168.65.30	f		2	DeviceID
-3	192.168.65.6	t		2	AnotherDeviceID
+7	172.16.4.45	f	Факультет автоматики и вычислительной техники.\nОбе лифтовые шахты.	2	nstu_avtf
 \.
 
 
@@ -695,6 +704,14 @@ COPY public.controllers (unique_id, ip_address, type, description, channels, dev
 COPY public.custom_templates (id, stock_template_id, custom_template) FROM stdin;
 5	2	{"year":2025,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":2,"days":{"weekend":[1,2,8,9,15,16,22,23],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[7],"special":[]}},{"month":4,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,3,4,9,10,11,17,18,24,25,31],"shortened":[],"special":[2,8]}},{"month":6,"days":{"weekend":[1,7,8,12,14,15,21,22,28,29],"shortened":[11],"special":[13]}},{"month":7,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[2,3,9,10,16,17,23,24,30,31],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[6,7,13,14,20,21,27,28],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[2,4,8,9,15,16,22,23,29,30],"shortened":[1],"special":[3]}},{"month":12,"days":{"weekend":[6,7,13,14,20,21,27,28],"shortened":[],"special":[31]}}]}
 4	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30,3,4,5,6,7],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+6	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":2,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":4,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":5,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":6,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":7,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[],"shortened":[],"special":[]}},{"month":12,"days":{"weekend":[],"shortened":[],"special":[]}}]}
+7	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+8	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+9	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+10	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28,5,4,3],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+11	5	{"year":2024,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,13,14,20,21,27,28],"shortened":[],"special":[]}},{"month":2,"days":{"weekend":[3,4,10,11,17,18,23,24,25],"shortened":[22],"special":[]}},{"month":3,"days":{"weekend":[2,3,8,9,10,16,17,23,24,30,31],"shortened":[7],"special":[]}},{"month":4,"days":{"weekend":[6,7,13,14,20,21,28],"shortened":[],"special":[29,30]}},{"month":5,"days":{"weekend":[1,4,5,9,11,12,18,19,25,26],"shortened":[8],"special":[10]}},{"month":6,"days":{"weekend":[1,2,8,9,12,15,16,22,23,29,30],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[6,7,13,14,20,21,27,28],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[3,4,9,10,16,17,23,24,30],"shortened":[2],"special":[]}},{"month":12,"days":{"weekend":[1,7,8,14,15,21,22,29],"shortened":[],"special":[30,31]}}]}
+12	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
+13	3	{"year":2026,"day_types":{"workday":{"description":"Рабочий день","start_hour":"09:00","end_hour":"18:00"},"weekend":{"description":"Выходной день","start_hour":"00:00","end_hour":"00:00"},"shortened":{"description":"Сокращённый день","start_hour":"09:00","end_hour":"16:00"},"special":{"description":"Специальный день","start_hour":"12:00","end_hour":"16:00"}},"months":[{"month":1,"days":{"weekend":[1,2,3,4,5,6,7,8,10,11,17,18,24,25,31],"shortened":[],"special":[9]}},{"month":2,"days":{"weekend":[1,7,8,14,15,21,22,23,28],"shortened":[],"special":[]}},{"month":3,"days":{"weekend":[1,7,8,14,15,21,22,28,29],"shortened":[],"special":[9]}},{"month":4,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[30],"special":[]}},{"month":5,"days":{"weekend":[1,2,3,9,10,16,17,23,24,30,31],"shortened":[8],"special":[11]}},{"month":6,"days":{"weekend":[6,7,12,13,14,20,21,27,28],"shortened":[11],"special":[]}},{"month":7,"days":{"weekend":[4,5,11,12,18,19,25,26],"shortened":[],"special":[]}},{"month":8,"days":{"weekend":[1,2,8,9,15,16,22,23,29,30],"shortened":[],"special":[]}},{"month":9,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[]}},{"month":10,"days":{"weekend":[3,4,10,11,17,18,24,25,31],"shortened":[],"special":[]}},{"month":11,"days":{"weekend":[1,4,7,8,14,15,21,22,28,29],"shortened":[3],"special":[]}},{"month":12,"days":{"weekend":[5,6,12,13,19,20,26,27],"shortened":[],"special":[31]}}]}
 \.
 
 
@@ -708,6 +725,12 @@ COPY public.departments (unique_id, title) FROM stdin;
 12	Бухгалтерия
 3	Внутренние аудиторы
 1	IT-отдел
+20	Кафедра АСУ
+21	Кафедра ВТ
+22	Кафедра ЗИ
+24	Кафедра ССОД
+25	Кафедра АВТ
+26	АВТФ
 \.
 
 
@@ -716,11 +739,52 @@ COPY public.departments (unique_id, title) FROM stdin;
 --
 
 COPY public.passage_point_assignments (group_id, passage_point_id) FROM stdin;
-2	1
-3	3
-3	1
-1	3
-1	4
+5	6
+5	7
+5	8
+5	14
+6	7
+6	8
+6	9
+7	6
+7	7
+7	8
+7	11
+7	13
+8	7
+8	8
+8	10
+9	6
+9	7
+9	8
+9	12
+9	11
+10	6
+10	7
+10	8
+10	9
+10	10
+10	11
+10	12
+10	13
+10	14
+12	15
+12	16
+12	17
+12	18
+12	19
+12	20
+12	21
+12	22
+13	17
+13	19
+13	21
+13	15
+14	15
+14	16
+14	18
+14	20
+14	22
 \.
 
 
@@ -729,9 +793,15 @@ COPY public.passage_point_assignments (group_id, passage_point_id) FROM stdin;
 --
 
 COPY public.passage_point_groups (unique_id, title, min_floor, max_floor) FROM stdin;
-3	Левая шахта и правая шахта Этажи 1,3	1	3
-1	Левая шахта Все этажи	1	15
-2	Правая шахта все этажи	1	11
+6	Кафедра ВТ	1	3
+8	Кафедра АВТ	1	4
+5	Кафедра АСУ	0	8
+7	Кафедра ЗИ	0	7
+9	Кафедра ССОД	0	6
+10	7 уч. корпус	0	8
+12	Все этажи (считыватель внутри кабины)	1	12
+13	Чётные этажи (Все этажи (считыватель внутри кабины))	1	12
+14	Нечётные этажи (считыватель внутри кабины)	1	12
 \.
 
 
@@ -740,10 +810,23 @@ COPY public.passage_point_groups (unique_id, title, min_floor, max_floor) FROM s
 --
 
 COPY public.passage_points (unique_id, title, floor, description) FROM stdin;
-2	Левая шахта 4 этаж	4	
-3	Левая шахта 1 этаж	1	
-4	Левая шахта 2 этаж	2	
-1	Правая шахта 3 этаж	3	
+14	7 уч. корпус Этаж 8	8	Верхний этаж. Кафедра АСУ
+8	7 уч. корпус Этаж 2	2	Деканат, кафедры АСУ, ЗИ
+9	7 уч. корпус Этаж 3	3	Кафедра ВТ
+10	7 уч. корпус Этаж 4	4	Кафедра АВТ
+11	7 уч. корпус Этаж 5	5	Кафедры ЗИ, ССОД
+12	7 уч. корпус Этаж 6	6	Кафедра ССОД
+13	7 уч. корпус Этаж 7	7	Кафедра ЗИ
+7	7 уч. корпус Этаж 1	1	Кафедры АСУ, ЗИ
+6	7 уч. корпус Этаж -1	0	Цоколь. Кафедры АСУ, ССОД, ЗИ
+15	Кабина лифта	1	Лифт
+16	Виртуальная (Этаж 1)	1	Для случая, когда считыватель в кабине лифта
+17	Виртуальная (Этаж 2)	2	Для случая, когда считыватель в кабине лифта
+18	Виртуальная (Этаж 3)	3	Для случая, когда считыватель в кабине лифта
+19	Виртуальная (Этаж 4)	4	Для случая, когда считыватель в кабине лифта
+20	Виртуальная (Этаж 5)	5	Для случая, когда считыватель в кабине лифта
+21	Виртуальная (Этаж 6)	6	Для случая, когда считыватель в кабине лифта
+22	Виртуальная (Этаж 7)	7	Для случая, когда считыватель в кабине лифта
 \.
 
 
@@ -752,8 +835,9 @@ COPY public.passage_points (unique_id, title, floor, description) FROM stdin;
 --
 
 COPY public.permissions (unique_id, title, schedule_id) FROM stdin;
-8	Тест 2025	5
-7	Основное 2026 + Выходные в августе	4
+14	Основное	10
+16	временный	12
+17	Тест	13
 \.
 
 
@@ -767,6 +851,8 @@ COPY public.posts (unique_id, title) FROM stdin;
 4	Управляющий
 1	Директор
 5	Заместитель директора
+15	Заведующий кафедрой
+19	Декан
 \.
 
 
@@ -775,9 +861,16 @@ COPY public.posts (unique_id, title) FROM stdin;
 --
 
 COPY public.scaners (unique_id, code, address, channel, passage_point_id, controller_id, description) FROM stdin;
-2	650000	6	1	3	1	
-3	268444	9	1	3	2	
-1	476444	44	0	1	1	норм
+6	111111	1	0	6	7	Цоколь
+7	222222	2	0	7	7	
+8	333333	3	0	8	7	
+9	444444	4	0	9	7	
+10	555555	5	0	10	7	
+11	666666	6	0	11	7	
+12	777777	7	0	12	7	
+13	888888	8	0	13	7	
+14	999999	9	0	14	7	
+15	32222334	7	0	15	7	Установлен внутри кабины лифта
 \.
 
 
@@ -797,8 +890,7 @@ COPY public.stock_templates (id, year, template) FROM stdin;
 --
 
 COPY public.system_users (unique_id, login, password, user_id) FROM stdin;
-1	admin	$2a$10$uUBN0WflkpX2Sgr6FvH.SeXh1b13K1zq5R7JaY6.I.QbmT4LdnBem	6
-2	petrov	$2a$10$thbdIc3msGVACljUKWk3/uMK9bMgt9k2CfCCJNk0w6o89xL2FTFdm	1
+5	admin	$2a$10$RIQ3NcbbcC6dVDa7FC7xDOYScrVrMmaFV0mgIJmrEoyu2Vm.GcqbG	\N
 \.
 
 
@@ -807,10 +899,13 @@ COPY public.system_users (unique_id, login, password, user_id) FROM stdin;
 --
 
 COPY public.users (unique_id, first_name, last_name, patronymic, department_id, post_id, description, is_admin, system_user_id) FROM stdin;
-4	Андрей	Гончаров	Владимирович	2	3		f	\N
-1	Иван	Петров	Васильевич	1	2	Новый сотрудник	t	\N
-7	Андрей	Воронцов	Васильевич	1	2		f	\N
-6	Илья	Воронин	Петрович	1	2	Нормальный	t	\N
+6	Илья	Воронин	Петрович	1	2	Нормальный	f	\N
+10	Иван	Рева	Леонидович	26	19		f	\N
+11	Александр	Якименко	Александрович	21	15		f	\N
+12	Максим	Бакаев	Александрович	24	15		f	\N
+9	Андрей	Иванов	Валерьевич	22	15		f	\N
+8	Иван	Томилов	Николаевич	20	15		t	5
+13	Сценарий	Новый	Установки	2	1		f	\N
 \.
 
 
@@ -825,70 +920,70 @@ SELECT pg_catalog.setval('public.access_levels_unique_id_seq', 6, true);
 -- Name: card_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.card_permissions_id_seq', 13, true);
+SELECT pg_catalog.setval('public.card_permissions_id_seq', 29, true);
 
 
 --
 -- Name: cards_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.cards_unique_id_seq', 17, true);
+SELECT pg_catalog.setval('public.cards_unique_id_seq', 25, true);
 
 
 --
 -- Name: controllers_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.controllers_unique_id_seq', 6, true);
+SELECT pg_catalog.setval('public.controllers_unique_id_seq', 7, true);
 
 
 --
 -- Name: custom_templates_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.custom_templates_id_seq', 5, true);
+SELECT pg_catalog.setval('public.custom_templates_id_seq', 13, true);
 
 
 --
 -- Name: departments_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.departments_unique_id_seq', 18, true);
+SELECT pg_catalog.setval('public.departments_unique_id_seq', 28, true);
 
 
 --
 -- Name: passage_point_groups_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.passage_point_groups_unique_id_seq', 4, true);
+SELECT pg_catalog.setval('public.passage_point_groups_unique_id_seq', 14, true);
 
 
 --
 -- Name: passage_points_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.passage_points_unique_id_seq', 5, true);
+SELECT pg_catalog.setval('public.passage_points_unique_id_seq', 22, true);
 
 
 --
 -- Name: permissions_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.permissions_unique_id_seq', 9, true);
+SELECT pg_catalog.setval('public.permissions_unique_id_seq', 17, true);
 
 
 --
 -- Name: posts_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.posts_unique_id_seq', 12, true);
+SELECT pg_catalog.setval('public.posts_unique_id_seq', 19, true);
 
 
 --
 -- Name: scaners_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.scaners_unique_id_seq', 5, true);
+SELECT pg_catalog.setval('public.scaners_unique_id_seq', 15, true);
 
 
 --
@@ -902,14 +997,14 @@ SELECT pg_catalog.setval('public.stock_templates_id_seq', 5, true);
 -- Name: system_users_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.system_users_unique_id_seq', 2, true);
+SELECT pg_catalog.setval('public.system_users_unique_id_seq', 6, true);
 
 
 --
 -- Name: users_unique_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ilavoronin
 --
 
-SELECT pg_catalog.setval('public.users_unique_id_seq', 7, true);
+SELECT pg_catalog.setval('public.users_unique_id_seq', 13, true);
 
 
 --
@@ -1252,5 +1347,5 @@ ALTER TABLE ONLY public.users
 -- PostgreSQL database dump complete
 --
 
-\unrestrict s4Wxeb6N9zWIDfVAjYgIUb0Sogy0qmzyW6bA7C4dFmB9MdhRdBjS2CCAcgQcwdF
+\unrestrict zrkzEjxjt9CDzYfL6Y0JmB5s1mGCaj6SDCz25ssl4dWeEFzPSZ5trnh65kMlejH
 
